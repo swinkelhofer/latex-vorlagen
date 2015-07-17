@@ -1,0 +1,37 @@
+\documentclass[DIN,visualize,fromalign=right,firstfoot=true,fromfax=false,fromphone=false]{scrlttr2}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{eurosym}
+
+\setkomavar{fromname}{Max Mustermann}
+\setkomavar{fromaddress}{Mustergasse 13 \\D-82013 Musterstadt }
+\setkomavar{subject}{Rechnung}
+
+
+\setkomavar{frombank}{Kreissparkasse Random  ·  IBAN: DE86021209403912903  ·  BIC: SOLADES1XXX\\Steuerliche Identifikationsnummer: 2134458904}
+
+\firstfoot{%
+\parbox[t]{\textwidth}{\footnotesize
+\ifkomavarempty{frombank}{}{%
+%\hfill
+\centering
+%\begin{tabular}[t]{l@{}}%
+%\multicolumn{1}{@{}l@{}}{\usekomavar*{frombank}:}\\
+\usekomavar{frombank}
+%\end{tabular}%
+}}}
+% \setkomavar{yourref}{müller2002}
+\begin{document}
+\begin{letter}{Auftraggeber\\Maximiliane Mustermannfrau\\Straße 14\\89344 Irgendwo}
+\opening{Sehr geehrte Damen und Herren,}
+
+hiermit stelle ich Ihnen für Dienstleistug xyz einen Betrag in Höhe von \EUR{100,00} in Rechnung. Bitte überweisen Sie diesen Betrag auf unten genanntes Konto. 
+
+%\begin{itemize}
+%	\item Technische Unterstützung für das Seminar in Bad Urach am 19. Februar 2015. 
+%\end{itemize}
+
+\closing{Mit freundlichen Grüßen}
+\end{letter}
+\end{document}
